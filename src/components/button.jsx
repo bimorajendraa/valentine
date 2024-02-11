@@ -1,14 +1,19 @@
 import React from "react";
 
-const Button = ({ onClick, children }) => {
+function Button() {
+  const handleButtonClick = () => {
+    const tombol = document.getElementById('tombol');
+    const ukuranSekarang = window.getComputedStyle(tombol).getPropertyValue('font-size');
+    const ukuranBaru = parseFloat(ukuranSekarang) + 2;
+    tombol.style.fontSize = ukuranBaru + 'px';
+  };
+
   return (
-    <button
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      onClick={onClick}
-    >
-      {children}
+    <button id="tombol" className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300" onClick={handleButtonClick}>
+      Tekan Saya
     </button>
   );
-};
+}
 
 export default Button;
+

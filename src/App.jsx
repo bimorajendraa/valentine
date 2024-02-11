@@ -7,9 +7,9 @@ const App = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container md:mx-auto px-4">
       <h1 className="text-2xl font-bold mb-4">My App</h1>
-      <Button onClick={handleClick}>Click Me</Button>
+      <Button/>
     </div>
   );
 };
