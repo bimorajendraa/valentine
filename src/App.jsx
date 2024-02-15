@@ -62,16 +62,16 @@ function App() {
   }
 
   return (
-    <>
+    <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% min-h-screen">
       <div className="container md:mx-auto px-20 text-center">
-        <img src={imgPath} className="block mx-auto max-w-80 max-h-48" />
-        <h1 className="text-3xl font-bold mt-20">{message}</h1>
-        <div className="py-6"> 
+        <img src={imgPath} className="block mx-auto max-w-80 max-h-64 py-4" />
+        <h1 className="text-3xl font-bold mt-18">{message}</h1>
+        <div className="py-6">
           <Button onClick={handleButtonClick} />
           <OtherButton onClick={handleButtonClick2} size={size} />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

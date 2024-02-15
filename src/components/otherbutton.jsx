@@ -6,9 +6,9 @@ function OtherButton({ onClick, size }) {
     <button
       onClick={onClick}
       style={{ fontSize: `${size}rem` }}
-      className="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg transition-all duration-300"
+      className="py-2 px-4 bg-green-500 text-white font-semibold rounded-lg transition-all duration-300 ml-4"
     >
-      Tombol Lain
+      YES
     </button>
   );
 }
