@@ -3,20 +3,20 @@ import Button from "./components/button";
 import OtherButton from "./components/otherbutton";
 
 function App() {
-  const [size, setSize] = useState(1); // Ukuran awal tombol lainnya
-  const [count, setCount] = useState({ button1: 0, button2: 0 }); // State untuk menghitung jumlah klik tombol 1 dan tombol 2
-  const [button1Clicked, setButton1Clicked] = useState(false); // State untuk melacak apakah tombol 1 telah ditekan
+  const [size, setSize] = useState(1); 
+  const [count, setCount] = useState({ button1: 0, button2: 0 }); 
+  const [button1Clicked, setButton1Clicked] = useState(false); 
 
   const handleButtonClick = () => {
     console.log("Button 1 clicked");
-    setSize(size + 1); // Menambah ukuran saat tombol ditekan
-    setCount((prevCount) => ({ ...prevCount, button1: prevCount.button1 + 1 })); // Menambah jumlah klik tombol 1
-    setButton1Clicked(true); // Mengatur bahwa tombol 1 telah ditekan
+    setSize(size + 1); 
+    setCount((prevCount) => ({ ...prevCount, button1: prevCount.button1 + 1 })); 
+    setButton1Clicked(true); 
   };
 
   const handleButtonClick2 = () => {
     console.log("Button 2 clicked");
-    setCount((prevCount) => ({ ...prevCount, button2: prevCount.button2 + 1 })); // Menambah jumlah klik tombol 2
+    setCount((prevCount) => ({ ...prevCount, button2: prevCount.button2 + 1 })); 
   };
 
   let message;
@@ -65,9 +65,9 @@ function App() {
     <div className="bg-[#FAE3D9] min-h-screen">
       <div className="container md:mx-auto px-20 text-center">
         <img src={imgPath} className="block mx-auto max-w-80 max-h-64 py-4" />
-        <h1 className="text-3xl font-bold mt-18 text-[#8AC6D1]">{message}</h1>
+        <h1 className="text-3xl font-bold mt-18 text-[#459cff]">{message}</h1>
         <div className="py-6">
-          <Button onClick={handleButtonClick} />
+          {count.button1 < 12 && <Button onClick={handleButtonClick} />}
           <OtherButton onClick={handleButtonClick2} size={size} />
         </div>
       </div>
