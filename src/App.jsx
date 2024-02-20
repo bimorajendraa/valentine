@@ -3,20 +3,22 @@ import Button from "./components/button";
 import OtherButton from "./components/otherbutton";
 
 function App() {
-  const [size, setSize] = useState(1); 
-  const [count, setCount] = useState({ button1: 0, button2: 0 }); 
-  const [button1Clicked, setButton1Clicked] = useState(false); 
+  const [size, setSize] = useState(1);
+  const [count, setCount] = useState({ button1: 0, button2: 0 });
+  const [button1Clicked, setButton1Clicked] = useState(false);
+  const [otherButtonClicked, setOtherButtonClicked] = useState(false);
 
   const handleButtonClick = () => {
     console.log("Button 1 clicked");
-    setSize(size + 1); 
-    setCount((prevCount) => ({ ...prevCount, button1: prevCount.button1 + 1 })); 
-    setButton1Clicked(true); 
+    setSize(size + 1);
+    setCount((prevCount) => ({ ...prevCount, button1: prevCount.button1 + 1 }));
+    setButton1Clicked(true);
   };
 
   const handleButtonClick2 = () => {
     console.log("Button 2 clicked");
-    setCount((prevCount) => ({ ...prevCount, button2: prevCount.button2 + 1 })); 
+    setCount((prevCount) => ({ ...prevCount, button2: prevCount.button2 + 1 }));
+    setOtherButtonClicked(true);
   };
 
   let message;
@@ -58,18 +60,37 @@ function App() {
     } else if (count.button1 === 11) {
       message = "dah lah bete aku";
       imgPath = "src/assets/gambar11.jpg";
+    } else if (count.button1 === 12) {
+      message = "AOWKAOKWOKOAKOWKOK TOMBOL NO NYA ILANG";
     }
   }
 
   return (
     <div className="bg-[#FAE3D9] min-h-screen">
       <div className="container md:mx-auto px-20 text-center">
-        <img src={imgPath} className="block mx-auto max-w-80 max-h-64 py-4" />
-        <h1 className="text-3xl font-bold mt-18 text-[#459cff]">{message}</h1>
-        <div className="py-6">
-          {count.button1 < 12 && <Button onClick={handleButtonClick} />}
-          <OtherButton onClick={handleButtonClick2} size={size} />
-        </div>
+        {otherButtonClicked ? (
+          <>
+            <img
+              src="src/assets/gambarfinal.jpg"
+              className="block mx-auto max-w-80 max-h-64 py-4"
+            />
+            <h1 className="text-3xl font-bold mt-18 text-[#459cff]">HEHEHEHE, hi my valentine i love you</h1>
+          </>
+        ) : (
+          <>
+            <img
+              src={imgPath}
+              className="block mx-auto max-w-80 max-h-64 py-4"
+            />
+            <h1 className="text-3xl font-bold mt-18 text-[#459cff]">
+              {message}
+            </h1>
+            <div className="py-6">
+              {count.button1 < 12 && <Button onClick={handleButtonClick} />}
+              <OtherButton onClick={handleButtonClick2} size={size} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
