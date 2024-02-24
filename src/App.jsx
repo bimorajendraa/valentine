@@ -25,41 +25,41 @@ function App() {
   let imgPath;
   if (!button1Clicked) {
     message = "Wanna be my valentine??";
-    imgPath = "src/assets/gambar0.jpg";
+    imgPath = "public/static/gambar0.jpg";
   } else {
     if (count.button1 === 1) {
       message = "Kok sempet sempetnya mencet no jir????";
-      imgPath = "src/assets/gambar1.jpg";
+      imgPath = "public/static/gambar1.jpg";
     } else if (count.button1 === 2) {
       message = "Jir no nya 2 kali??";
-      imgPath = "src/assets/gambar2.jpg";
+      imgPath = "public/static/gambar2.jpg";
     } else if (count.button1 === 3) {
       message = "Jir udah lgsg pencet yes";
-      imgPath = "src/assets/gambar3.jpg";
+      imgPath = "public/static/gambar3.jpg";
     } else if (count.button1 === 4) {
       message = "bang udah bang";
-      imgPath = "src/assets/gambar4.jpg";
+      imgPath = "public/static/gambar4.jpg";
     } else if (count.button1 === 5) {
       message = "please ini mah pencet yes nya";
-      imgPath = "src/assets/gambar5.jpg";
+      imgPath = "public/static/gambar5.jpg";
     } else if (count.button1 === 6) {
       message = "COKKK PENCET YESSS";
-      imgPath = "src/assets/gambar6.jpg";
+      imgPath = "public/static/gambar6.jpg";
     } else if (count.button1 === 7) {
       message = "YAKALI GA DIPENCET YESNYA";
-      imgPath = "src/assets/gambar7.jpg";
+      imgPath = "public/static/gambar7.jpg";
     } else if (count.button1 === 8) {
       message = "LIAT TOMBOL YES NYA MAKIN GEDE JIR";
-      imgPath = "src/assets/gambar8.jpg";
+      imgPath = "public/static/gambar8.jpg";
     } else if (count.button1 === 9) {
       message = "kira kira ini situasi anjir apa buset";
-      imgPath = "src/assets/gambar9.jpg";
+      imgPath = "public/static/gambar9.jpg";
     } else if (count.button1 === 10) {
       message = "cepet pencet yes sebelum aku ngambek";
-      imgPath = "src/assets/gambar10.jpg";
+      imgPath = "public/static/gambar10.jpg";
     } else if (count.button1 === 11) {
       message = "dah lah bete aku";
-      imgPath = "src/assets/gambar11.jpg";
+      imgPath = "public/static/gambar11.jpg";
     } else if (count.button1 === 12) {
       message = "AOWKAOKWOKOAKOWKOK TOMBOL NO NYA ILANG";
     }
@@ -71,10 +71,12 @@ function App() {
         {otherButtonClicked ? (
           <>
             <img
-              src="src/assets/gambarfinal.jpg"
+              src="public/static/gambarfinal.jpg"
               className="block mx-auto max-w-80 max-h-64 py-4"
             />
-            <h1 className="text-3xl font-bold mt-18 text-[#459cff]">HEHEHEHE, hi my valentine i love you</h1>
+            <h1 className="text-3xl font-bold mt-18 text-[#459cff]">
+              HEHEHEHE, hi my valentine i love you
+            </h1>
           </>
         ) : (
           <>
